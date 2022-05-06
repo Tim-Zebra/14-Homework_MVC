@@ -1,10 +1,3 @@
-DROP DATABASE IF EXISTS name_db;
-CREATE DATABASE name_db;
+DROP DATABASE IF EXISTS tech_blog_db;
 
-USE name_db;
-
-CREATE TABLE table_name(
-  id INT NOT NULL,
-  product_name VARCHAR(30) NOT NULL,
-  category_name VARCHAR(30) NOT NULL
-);
+CREATE DATABASE tech_blog_db;

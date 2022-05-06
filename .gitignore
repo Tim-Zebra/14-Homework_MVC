@@ -50,6 +50,7 @@ typings/
 # Optional npm cache directory
 .npm
 .env
+.DS_Store
 
 # Optional eslint cache
 .eslintcache
