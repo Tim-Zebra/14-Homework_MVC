@@ -8,14 +8,18 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const { strict } = require('assert');
 const routes = require('./controllers');
-const sequelize = require('./config/config');
+const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: process.env.SECRET,
   cookie: {
-
+    maxAge: 3600,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
   },
   resave: false,
   saveUninitialized: true,
