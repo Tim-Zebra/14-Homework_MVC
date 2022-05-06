@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 const { strict } = require('assert');
 const routes = require('./controllers');
-const sequelize = require('./config/connection');
+const sequelize = require('./config/config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
