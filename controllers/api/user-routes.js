@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// The `/api/user` endpoint
+
 router.post('/', async (req, res) => {
   try {
     const newUser = await User.create({
