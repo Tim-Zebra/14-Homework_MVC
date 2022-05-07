@@ -6,17 +6,26 @@ const editFormHandler = async function(event) {
   const title = document.querySelector('input[name="post-title"]').value;
   const body = document.querySelector('textarea[name="post-body"]').value;
 
-  await fetch('', {
-    
-    }),
-    
-  });
+  // Functions only if a title and body are entered
+if(title && body) {
+    await fetch('/dashboard/edit/:id', {
+      method: 'PUT',
+      body: JSON.stringify({ title, body }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  document.location.replace('/dashboard');
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to update!');
+    } 
+  }
 };
 
-const deleteClickHandler = async function() {
-  await fetch(``, {
+const deleteClickHandler = async (event) => {
+  await fetch(`/api/post/:id`, {
     method: 'DELETE'
   });
 
