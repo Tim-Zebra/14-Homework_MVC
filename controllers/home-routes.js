@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
 
     // Passes posts and session data into mustache
     res.render('all-posts', { 
+      layout: 'main',
       posts, 
       logged_in: req.session.logged_in 
     });
