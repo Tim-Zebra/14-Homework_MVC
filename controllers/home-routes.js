@@ -3,7 +3,6 @@ const { Post, Comment, User } = require('../models/');
 
 // The `/` endpoint
 
-
 // get all posts for homepage
 router.get('/', async (req, res) => {
   

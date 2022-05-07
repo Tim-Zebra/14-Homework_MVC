@@ -4,9 +4,9 @@ const signupFormHandler = async function(event) {
   const usernameEl = document.querySelector('#username-input-signup');
   const passwordEl = document.querySelector('#password-input-signup');
 
-  // If a user name and password is entered, create and account
+  // If a username and password is entered, create and account
   if (usernameEl && passwordEl) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/user', {
       method: 'POST',
       body: JSON.stringify({ usernameEl, passwordEl }),
       headers: { 'Content-Type': 'application/json' },
