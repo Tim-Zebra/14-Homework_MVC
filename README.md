@@ -29,7 +29,7 @@ describe <br /> <br />
 
 ## References:
 * Starter code given by Instructor from UTA Bootcamp
-* faivon obtained from https://icons8.com/icons/set/blog
+* Inspired by code from UTA Bootcamp: #14 MVC
 *
 
 ## Development Process:

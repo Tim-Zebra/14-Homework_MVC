@@ -1,4 +1,4 @@
-const postId = document.querySelector('input[name="post-id"]').value;
+// const postId = document.querySelector('input[name="post-id"]').value;
 
 const editFormHandler = async function(event) {
   event.preventDefault();
@@ -8,15 +8,17 @@ const editFormHandler = async function(event) {
 
   // Functions only if a title and body are entered
 if(title && body) {
-    await fetch('/dashboard/edit/:id', {
+
+  const response = await fetch('/api/post/1', {
       method: 'PUT',
       body: JSON.stringify({ title, body }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
+console.log('This happened', response);
     if (response.ok) {
+      console.log('Success!: Replaced by, ', title, ' and ', body)
       document.location.replace('/dashboard');
     } else {
       alert('Failed to update!');
@@ -35,6 +37,6 @@ const deleteClickHandler = async (event) => {
 document
   .querySelector('#edit-post-form')
   .addEventListener('submit', editFormHandler);
-document
-  .querySelector('#delete-btn')
-  .addEventListener('click', deleteClickHandler);
+// document
+//   .querySelector('#delete-btn')
+//   .addEventListener('click', deleteClickHandler);

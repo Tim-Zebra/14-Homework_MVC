@@ -44,7 +44,7 @@ router.get('/post/:id', async (req, res) => {
     const post = postData.get({ plain: true });
 
     // Passes post and session status to mustache
-    res.render('post', {
+    res.render('single-post', {
       ...post,
       // logged_in: req.session.logged_in
     });
