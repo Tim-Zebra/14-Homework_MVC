@@ -39,7 +39,7 @@ router.get('/post/:id', async (req, res) => {
         },
       ],
     });
-
+    
     // Gets data from single post
     const post = postData.get({ plain: true });
 
