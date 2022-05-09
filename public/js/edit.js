@@ -35,9 +35,10 @@ if(title && body) {
 const deleteClickHandler = async (event) => {
   await fetch(`/api/post/${id}`, {
     method: 'DELETE'
-  });
 
-  document.location.replace('/dashboard');
+  });
+  console.log('Delete happened', id);
+  // document.location.replace('/dashboard');
 };
 
 document

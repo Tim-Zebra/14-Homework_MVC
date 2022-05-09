@@ -20,7 +20,6 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
-console.log('\x1b[34m', '\n\n----------------Post-routes put happended-------------------\n\n', req.params.id, '\x1b[37m');
   try {
     const [affectedRows] = await Post.update(req.body, {
       where: {
@@ -39,12 +38,12 @@ console.log('\x1b[34m', '\n\n----------------Post-routes put happended----------
 
 });
 
+// Deletes a post
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const [affectedRows] = await Post.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
