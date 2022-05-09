@@ -37,11 +37,11 @@ router.get('/post/:id', async (req, res) => {
     
     // Gets data from single post
     const post = postData.get({ plain: true });
-    console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', post, '\x1b[37m');
+    
     // Passes post and session status to mustache
     res.render('single-post', {
       ...post,
-      // logged_in: req.session.logged_in
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -49,19 +49,19 @@ router.get('/post/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
 
   res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
 
   res.render('signup');
 });
