@@ -6,10 +6,14 @@ const editFormHandler = async function(event) {
   const title = document.querySelector('input[name="post-title"]').value;
   const body = document.querySelector('textarea[name="post-body"]').value;
 
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
+
   // Functions only if a title and body are entered
 if(title && body) {
 
-  const response = await fetch(`/dashboard/edit/:id`, {
+  const response = await fetch(`/api/post/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         title,
@@ -19,6 +23,8 @@ if(title && body) {
         'Content-Type': 'application/json',
       },
     });
+    console.log('Edit JS happened. Response: ', response);
+
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {

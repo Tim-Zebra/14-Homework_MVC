@@ -16,7 +16,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
-console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', req.params.id, '\x1b[37m');
+console.log('\x1b[34m', '\n\n----------------Post-routes put happended-------------------\n\n', req.params.id, '\x1b[37m');
   try {
     const [affectedRows] = await Post.update(req.body, {
       where: {
