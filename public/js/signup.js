@@ -1,17 +1,16 @@
 const signupFormHandler = async function(event) {
   event.preventDefault();
 
-  const usernameEl = document.querySelector('#username-input-signup');
-  const passwordEl = document.querySelector('#password-input-signup');
+  const username = document.querySelector('#username-input-signup').value.trim();
+  const password = document.querySelector('#password-input-signup').value.trim();
 
-  console.log('\n\n\n\n\nThis happended\n\n\n\n\n\n');
-  // console.log('This happended', usernameEl, passwordEl);
+console.log('\n\n----------------JAVASCRIPT happended-------------------\n\n', username, " ", password,);
   // If a username and password is entered, create and account
-  if (usernameEl && passwordEl) {
+  if (username && password) {
 
-    const response = await fetch('/api/post', {
+    const response = await fetch('/api/user', {
       method: 'POST',
-      body: JSON.stringify({ usernameEl, passwordEl }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
   });
 

@@ -4,6 +4,7 @@ const { User } = require('../../models');
 // The `/api/user` endpoint
 
 router.post('/', async (req, res) => {
+  console.log('\x1b[36m', '\n\n----------------API ROUTE happended-------------------\n\n', req.body, '\x1b[37m');
   try {
     const newUser = await User.create({
       username: req.body.username,
