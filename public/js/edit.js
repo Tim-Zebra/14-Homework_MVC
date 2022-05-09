@@ -1,4 +1,7 @@
 // const postId = document.querySelector('input[name="post-id"]').value;
+const id = window.location.toString().split('/')[
+  window.location.toString().split('/').length - 1
+];
 
 const editFormHandler = async function(event) {
   event.preventDefault();
@@ -6,11 +9,7 @@ const editFormHandler = async function(event) {
   const title = document.querySelector('input[name="post-title"]').value;
   const body = document.querySelector('textarea[name="post-body"]').value;
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-
-  // Functions only if a title and body are entered
+// Functions only if a title and body are entered
 if(title && body) {
 
   const response = await fetch(`/api/post/${id}`, {
@@ -34,7 +33,7 @@ if(title && body) {
 };
 
 const deleteClickHandler = async (event) => {
-  await fetch(`/api/post/:id`, {
+  await fetch(`/api/post/${id}`, {
     method: 'DELETE'
   });
 
@@ -44,6 +43,6 @@ const deleteClickHandler = async (event) => {
 document
   .querySelector('#edit-post-form')
   .addEventListener('submit', editFormHandler);
-// document
-//   .querySelector('#delete-btn')
-//   .addEventListener('click', deleteClickHandler);
+document
+  .querySelector('#delete-btn')
+  .addEventListener('click', deleteClickHandler);
