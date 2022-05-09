@@ -7,7 +7,14 @@ const { Post, Comment, User } = require('../models/');
 router.get('/', async (req, res) => {
   try {
     // Get all posts and comments
-    const postData = await Post.findAll();
+    const postData = await Post.findAll({
+      include: [
+        { 
+          model: User,
+          attributes: ['username'],
+        },
+      ]
+    });
 
     // Gets data from posts
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -28,16 +35,19 @@ router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
+        { 
+          model: User,
+          attributes: ['username'],
+        },
         {
           model: Comment,
           attributes: ['body'],
         },
       ],
     });
-    
     // Gets data from single post
     const post = postData.get({ plain: true });
-    console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', req.session.loggedIn, '\x1b[37m');
+    console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', postData, '\x1b[37m');
     // Passes post and session status to mustache
     res.render('single-post', {
       ...post,

@@ -22,7 +22,6 @@ if(title && body) {
         'Content-Type': 'application/json',
       },
     });
-    console.log('Edit JS happened. Response: ', response);
 
     if (response.ok) {
       document.location.replace('/dashboard');
@@ -37,8 +36,7 @@ const deleteClickHandler = async (event) => {
     method: 'DELETE'
 
   });
-  console.log('Delete happened', id);
-  // document.location.replace('/dashboard');
+  document.location.replace('/dashboard');
 };
 
 document

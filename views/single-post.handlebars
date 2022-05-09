@@ -1,7 +1,8 @@
 {{!-- Top card/Post --}}
 <div class="post card">
-    <h1 class="card-header">
-        {{title}}
+    <h1 class="card-header flex-row justify-space-between">
+        <div>{{title}}</div>
+        <div class=>{{User.username}}</div>
     </h1>
     <p class="card-body">
         {{body}}
@@ -11,9 +12,7 @@
 {{!-- Previous comments --}}
 {{#each Comments as |comment| }}
 <div class="post card">
-    <h1 class="card-header">
-
-    </h1>
+        <h1 class="card-header"></h1>
 
     <p class="card-body">
         {{comment.body}}
@@ -36,7 +35,6 @@
 <div class="card-body text-center">
   Login to post a comment!
 </div>
-
 {{/if}}
 
 <script src="/js/comment.js"></script>
