@@ -5,9 +5,10 @@ const logout = async function() {
   });
 
   if (response.ok) {
+    alert('You are logged out.');
     document.location.replace('/');
   } else {
-    alert('Failed to log out');
+    alert('Failed to log out. No user is logged in.');
   }
 };
 
