@@ -9,12 +9,14 @@
 </div>
 
 {{!-- Previous comments --}}
-{{#each comments as |comment| }}
+{{#each Comments as |comment| }}
 <div class="post card">
     <h1 class="card-header">
+
     </h1>
+
     <p class="card-body">
-        {{body}}
+        {{comment.body}}
     </p>
 </div>
 {{/each}}

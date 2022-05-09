@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
     // Gets data from posts
     const posts = postData.map((post) => post.get({ plain: true }));
-
+console.log('\x1b[36m', '\n\n----------------ALL POSTS happended-------------------\n\n', posts, '\x1b[37m');
     // Passes posts and session data into mustache
     res.render('all-posts', { 
       layout: 'main',
@@ -37,7 +37,7 @@ router.get('/post/:id', async (req, res) => {
     
     // Gets data from single post
     const post = postData.get({ plain: true });
-
+    console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', post, '\x1b[37m');
     // Passes post and session status to mustache
     res.render('single-post', {
       ...post,
