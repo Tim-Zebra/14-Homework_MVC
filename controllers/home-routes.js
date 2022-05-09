@@ -11,12 +11,11 @@ router.get('/', async (req, res) => {
 
     // Gets data from posts
     const posts = postData.map((post) => post.get({ plain: true }));
-console.log('\x1b[36m', '\n\n----------------ALL POSTS happended-------------------\n\n', posts, '\x1b[37m');
     // Passes posts and session data into mustache
     res.render('all-posts', { 
       layout: 'main',
       posts, 
-      // logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
