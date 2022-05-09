@@ -11,11 +11,12 @@ router.get('/', async (req, res) => {
 
     // Gets data from posts
     const posts = postData.map((post) => post.get({ plain: true }));
+
     // Passes posts and session data into mustache
     res.render('all-posts', { 
       layout: 'main',
       posts, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.loggedIn 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -36,11 +37,11 @@ router.get('/post/:id', async (req, res) => {
     
     // Gets data from single post
     const post = postData.get({ plain: true });
-    
+    console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', req.session.loggedIn, '\x1b[37m');
     // Passes post and session status to mustache
     res.render('single-post', {
       ...post,
-      logged_in: req.session.logged_in
+      logged_in: req.session.loggedIn
     });
   } catch (err) {
     res.status(500).json(err);
