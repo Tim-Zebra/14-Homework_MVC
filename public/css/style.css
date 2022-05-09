@@ -218,6 +218,11 @@ input {
 .text-uppercase {
   text-transform: uppercase;
 }
+.name-date {
+  font-weight: 500;
+  font-size: 20px;
+  align-self: center;
+}
 
 /* TEXT UTILS */
 .text-center {

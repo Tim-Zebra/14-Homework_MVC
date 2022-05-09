@@ -2,7 +2,7 @@
 <div class="post card">
     <h1 class="card-header flex-row justify-space-between">
         <div>{{title}}</div>
-        <div class=>{{User.username}}</div>
+        <div class="name-date">Posted by "{{User.username}}" on {{format_date createdAt}}</div>
     </h1>
     <p class="card-body">
         {{body}}
