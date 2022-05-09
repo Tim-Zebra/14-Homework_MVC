@@ -7,13 +7,7 @@ const { Post, Comment, User } = require('../models/');
 router.get('/', async (req, res) => {
   try {
     // Get all posts and comments
-    const postData = await Post.findAll({
-      include: [
-        {
-          model: Comment,
-        },
-      ],
-    });
+    const postData = await Post.findAll();
 
     // Gets data from posts
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -36,6 +30,7 @@ router.get('/post/:id', async (req, res) => {
       include: [
         {
           model: Comment,
+          attributes: ['body'],
         },
       ],
     });

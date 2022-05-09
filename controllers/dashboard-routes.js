@@ -30,7 +30,6 @@ router.get('/new', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, async (req, res) => {
-  console.log('\x1b[36m', '\n\n----------------Dashboard-routes happended-------------------\n\n', req.params.id, '\x1b[37m');
   try {
     const postData = await Post.findByPk(req.params.id);
 

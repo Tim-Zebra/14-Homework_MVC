@@ -5,6 +5,7 @@ const withAuth = require('../../utils/auth');
 // The `/api/comment` endpoint
 
 router.post('/', withAuth, async (req, res) => {
+  console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', req.body, '\x1b[37m');
   try {
     const newComment = await Comment.create({
       ...req.body,
