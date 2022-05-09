@@ -16,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
+console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', req.params.id, '\x1b[37m');
   try {
     const [affectedRows] = await Post.update(req.body, {
       where: {
@@ -31,6 +32,7 @@ router.put('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+
 });
 
 router.delete('/:id', withAuth, async (req, res) => {

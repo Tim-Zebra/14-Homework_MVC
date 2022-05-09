@@ -9,16 +9,17 @@ const editFormHandler = async function(event) {
   // Functions only if a title and body are entered
 if(title && body) {
 
-  const response = await fetch('/api/post/1', {
+  const response = await fetch(`/dashboard/edit/:id`, {
       method: 'PUT',
-      body: JSON.stringify({ title, body }),
+      body: JSON.stringify({
+        title,
+        body 
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-console.log('This happened', response);
     if (response.ok) {
-      console.log('Success!: Replaced by, ', title, ' and ', body)
       document.location.replace('/dashboard');
     } else {
       alert('Failed to update!');
