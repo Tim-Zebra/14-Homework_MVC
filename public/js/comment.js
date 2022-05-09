@@ -1,7 +1,11 @@
+const id = window.location.toString().split('/')[
+  window.location.toString().split('/').length - 1
+];
+
 const commentFormHandler = async function(event) {
   event.preventDefault();
 
-  const postId = document.querySelector('input[name="post-id"]').value;
+  // const postId = document.querySelector('input[name="post-id"]').value;
   const body = document.querySelector('textarea[name="comment-body"]').value;
 
   if (body) {
@@ -20,6 +24,6 @@ const commentFormHandler = async function(event) {
   }
 };
 
-document
-  .querySelector('#new-comment-form')
-  .addEventListener('submit', commentFormHandler);
+// document
+//   .querySelector('#new-comment-form')
+//   .addEventListener('submit', commentFormHandler);

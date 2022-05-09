@@ -1,8 +1,15 @@
-{{#each posts as |post| }}
 <div class="posts list-group">
+{{#each posts as |post| }}
+<div class="card">
     <a href="/dashboard/edit/{{post.id}}">
-        <h1>{{post.title}}</h1>
+        <h1 class="card-header">
+            {{post.title}}
+        </h1>
     </a>
-    {{post.body}}
+    <p class="card-body">
+        {{post.body}}
+    </p>
+
 </div>
 {{/each}}
+</div>
