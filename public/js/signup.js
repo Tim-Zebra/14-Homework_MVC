@@ -4,7 +4,6 @@ const signupFormHandler = async function(event) {
   const username = document.querySelector('#username-input-signup').value.trim();
   const password = document.querySelector('#password-input-signup').value.trim();
 
-console.log('\n\n----------------JAVASCRIPT happended-------------------\n\n', username, " ", password,);
   // If a username and password is entered, create and account
   if (username && password) {
 
