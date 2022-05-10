@@ -6,7 +6,7 @@ const helpers = require('./utils/helpers');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
 const { strict } = require('assert');
 const routes = require('./controllers');
@@ -16,7 +16,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
   secret: process.env.SECRET,
   cookie: {
-    // maxAge expires after 5 minutes. After 5 minutes user will have to log in again
+    // maxAge expires after 5 minutes. After 5 minutes user will have to log in again.
     maxAge: 300000,
     httpOnly: true,
     secure: false,
