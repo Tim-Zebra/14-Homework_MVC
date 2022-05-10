@@ -45,9 +45,10 @@ router.get('/post/:id', async (req, res) => {
         },
       ],
     });
+
     // Gets data from single post
     const post = postData.get({ plain: true });
-    console.log('\x1b[36m', '\n\n----------------Home routes single ID happended-------------------\n\n', postData.Comments, '\x1b[37m');
+
     // Passes post and session status to mustache
     res.render('single-post', {
       ...post,
@@ -58,6 +59,7 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// Redirects to homepage after login
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -67,6 +69,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Redirects to homepage after sign up
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

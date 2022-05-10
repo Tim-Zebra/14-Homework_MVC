@@ -31,6 +31,7 @@ if(title && body) {
   }
 };
 
+// Deletes post
 const deleteClickHandler = async (event) => {
   await fetch(`/api/post/${id}`, {
     method: 'DELETE'

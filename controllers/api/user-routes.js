@@ -3,6 +3,7 @@ const { User } = require('../../models');
 
 // The `/api/user` endpoint
 
+// Creates a new user
 router.post('/', async (req, res) => {
   try {
     const newUser = await User.create({
@@ -22,6 +23,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Logs in a user
 router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({
@@ -54,6 +56,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Logs out a user
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

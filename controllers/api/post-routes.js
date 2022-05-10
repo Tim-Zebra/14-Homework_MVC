@@ -4,6 +4,7 @@ const withAuth = require('../../utils/auth');
 
 // The `/api/post` endpoint
 
+// Create a new post
 router.post('/', withAuth, async (req, res) => {
   const body = req.body;
 
