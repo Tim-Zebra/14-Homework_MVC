@@ -1,13 +1,14 @@
 {{!-- Top card/Post --}}
-<div class="post card">
-    <h1 class="card-header flex-row justify-space-between">
-        <div>{{title}}</div>
-        <div class="name-date">Posted by '{{User.username}}' on {{format_date createdAt}}</div>
-    </h1>
-    <p class="card-body">
-        {{body}}
-    </p>
-</div>
+<div class="posts list-group">
+  <div class="post card">
+      <h1 class="card-header flex-row justify-space-between">
+          <div>{{title}}</div>
+          <div class="name-date">Posted by '{{User.username}}' on {{format_date createdAt}}</div>
+      </h1>
+      <p class="card-body">
+          {{body}}
+      </p>
+  </div>
 
 {{!-- Previous comments --}}
 {{#each Comments as |comment| }}
