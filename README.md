@@ -1,7 +1,7 @@
 # Tech Blog
 
 ## Description
-describe <br /> <br />
+A simple full stack web application designed to create postings and add comments through user login and identification <br /> <br />
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
  ## Table of Contents:
@@ -14,15 +14,21 @@ describe <br /> <br />
   **[Author](#author)** <br />
 
 ## How to Use:
-* 
-* 
+* View postings on the main page of the website
+* Click on posting headers to see user's comments
+* If you want to add your own comments or make your own posts, you will need to login 
+* If you do not have a login click the sign up link and it will direct you to create a user account
+* To add a post, go into your dashboard and select "+ Post"
+* To delete or update your post, go into your dash board and click the title of that post. Then fill out the form as desired
+* To comment, go to the homepage and click on the post you would like to comment on. You can add your comment using the form towards the bottom
+* Your session will expire after 5 minutes, login again if this happens
 
 ## Application Demos:
-<p align="center">
-<img src="./demos/.png" alt="drawing" width="600" height="auto"/> <br />
-<img src="./demos/.gif" alt="drawing" width="600" height="auto"/> <br /><br />
-<font size="4"><a href="">Video Demo</a></font> 
-</p>
+<h2 align="center">Homepage</h2>
+<p align="center"><img src="./demos/demo_homepage.png" alt="drawing" width="800" height="auto"/></p> <br /><br />
+<h2 align="center">Session Expiration</h2>
+<p align="center"><img src="./demos/demo_sessionExpiration.gif" alt="session expiration demo" width="800" height="auto"/></p> <br />
+<p align="center"><font size="4"><a href="https://drive.google.com/file/d/1U-1swBech54cXyp0kz1k_hjd7ZzuixeY/view">Video Demo</a></font></p>
 
 ## Link to Deployed Page:
 
