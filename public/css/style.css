@@ -184,6 +184,10 @@ input {
   padding: 1%;
 }
 
+.com-header {
+  height: 49.188px;
+}
+
 /* FORM */
 .form-label,
 .form-input,

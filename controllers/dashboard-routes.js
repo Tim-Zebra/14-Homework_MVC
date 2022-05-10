@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 // The `/dashboard` endpoint
 
+// View all posts created by user
 router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -23,12 +24,14 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// Enter a new post
 router.get('/new', withAuth, (req, res) => {
   res.render('new-post', {
     layout: 'dashboard',
   });
 });
 
+// Edit a specific post
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
