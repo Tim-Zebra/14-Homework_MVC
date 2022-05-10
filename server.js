@@ -6,7 +6,7 @@ const helpers = require('./utils/helpers');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
 const { strict } = require('assert');
 const routes = require('./controllers');
