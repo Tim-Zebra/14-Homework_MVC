@@ -17,8 +17,8 @@
     <p class="card-body">
         {{comment.body}}
     </p>
-        <p class="card-body">
-        {{comment.body}}
+    <p class="card-body">
+        ~ {{../User.username}}, {{format_date ../createdAt}}
     </p>
 </div>
 {{/each}}
