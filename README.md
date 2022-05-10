@@ -1,4 +1,4 @@
-# 
+# Tech Blog
 
 ## Description
 describe <br /> <br />
@@ -30,12 +30,15 @@ describe <br /> <br />
 ## References:
 * Starter code given by Instructor from UTA Bootcamp
 * Inspired by code from UTA Bootcamp: #14 MVC
-*
 
 ## Development Process:
-1. 
-2. 
-3. See commits for more details
+1. Set up base files
+2. Removed all instances for need of login/user and authorization middleware
+3. Began with the pilar of content (Post), and added/debugged out-branching featurers from there 
+5. Ensured all pages displayed and ran as intended
+4. Reintroduced login/user and authorization middleware
+6. Confirmed session/userId tracking and data application
+7. See commits for more details
 
 ## Author:
 Created by Timothy Zalewski | Deployed on [GitHub](https://github.com/Tim-Zebra)
